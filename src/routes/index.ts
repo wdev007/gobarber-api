@@ -1,7 +1,8 @@
 import { Router } from 'express';
+import appointmentsRouters from './appointments.routes';
 
 const routes = Router();
 
-routes.get('/users', () => {});
+routes.use('/appointments', appointmentsRouters);
 
 export default routes;
