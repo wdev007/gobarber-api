@@ -4,7 +4,7 @@
   "port": "5432",
   "username": "postgres",
   "password": "gobarber",
-  "database": "gobarber_01",
+  "database": "gobarber",
   "synchronize": true,
   "entities": ["src/models/*.ts"],
   "migrations": ["src/database/migrations/*.ts"],

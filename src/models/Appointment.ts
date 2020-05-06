@@ -5,8 +5,9 @@ import {
   ManyToOne,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
 } from 'typeorm';
-// import User from './User';
+import User from './User';
 
 @Entity('appointments')
 class Appointments {
@@ -14,8 +15,11 @@ class Appointments {
   id: string;
 
   @Column()
-  // @ManyToOne(() => User)
-  provider: string;
+  provider_id: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'provider_id' })
+  provider: User;
 
   @Column('timestamp with time zone')
   date: Date;
