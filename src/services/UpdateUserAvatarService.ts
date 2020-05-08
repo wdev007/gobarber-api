@@ -21,6 +21,8 @@ class UpdateUserAvatarService {
       throw new Error('Only authenticated users can change avatar.');
     }
 
+    delete user.password;
+
     if (user.avatar) {
       const userAvatarFilePath = path.join(uploadConfig.directory, user.avatar);
       const userAvatarFileExists = await fs.promises.stat(userAvatarFilePath);
