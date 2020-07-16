@@ -3,11 +3,11 @@ import 'dotenv/config';
 import express, { Application } from 'express';
 import 'express-async-errors';
 
-import handleExceptionError from './middlewares/handleExceptionError';
-import uploadConfig from './config/upload';
+import uploadConfig from '@config/upload';
+import handleExceptionError from '@shared/infra/http/middlewares/handleExceptionError';
 
-import routes from './routes';
-import './database';
+import routes from '@shared/infra/http/routes';
+import '@shared/infra/typeorm';
 
 class App {
   public server: Application;
