@@ -8,6 +8,7 @@ import handleExceptionError from '@shared/infra/http/middlewares/handleException
 
 import routes from '@shared/infra/http/routes';
 import '@shared/infra/typeorm';
+import '@shared/container';
 
 class App {
   public server: Application;
